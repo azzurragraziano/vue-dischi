@@ -17,6 +17,7 @@ export default {
 
     header {
         background-color: $secondary_color;
+        height: 65px;
 
         img {
             width: 50px;
