@@ -1,19 +1,29 @@
 <template>
     <section>
+
+        <!-- card container -->
         <div class="container">
             <SingleCardComponent v-for="(element, index) in albums" :key="index" :album="element"/>
         </div>
+
+        <!-- loader -->
+        <div class="loader">
+            <LoaderComponent v-if="albums.length < 10"/>
+        </div>
+
     </section>
 </template> 
 
 <script>
 import axios from 'axios';
 import SingleCardComponent from './SingleCardComponent.vue';
+import LoaderComponent from './LoaderComponent.vue';
 
 export default {
     name:'MainComponent',
     components:{
         SingleCardComponent,
+        LoaderComponent
     },
     
     data() {
